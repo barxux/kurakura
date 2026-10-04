@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurapika Kurta — Hunter × Hunter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --scarlet: #DC143C;
+            --scarlet-deep: #9B0F2A;
+            --scarlet-glow: rgba(220, 20, 60, 0.35);
+            --bg-dark: #0C0A0A;
+            --text-main: #F5EDED;
+            --text-muted: #C9B8B8;
+            --border: #3A1A1F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+            background: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.75;
+            font-size: 1.15rem;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(180deg, #1A0A0C 0%, var(--bg-dark) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3.5rem 1.5rem 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: var(--scarlet);
+            box-shadow: 0 0 18px var(--scarlet-glow);
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-main);
+            margin-bottom: 0.4rem;
+        }
+
+        header h1 span {
+            color: var(--scarlet);
+        }
+
+        header .subtitle {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-muted);
+            letter-spacing: 0.08em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-family: 'Cinzel', serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--scarlet);
+            border-bottom-color: var(--scarlet);
+        }
+
+        /* Main */
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem 5rem;
+        }
+
+        article {
+            margin-bottom: 4.5rem;
+        }
+
+        article:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.65rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--scarlet);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--scarlet-deep), transparent);
+        }
+
+        /* ===== BLOQUE TEXTO + FOTO (lado a lado) ===== */
+        .block {
+            display: flex;
+            gap: 2.2rem;
+            align-items: flex-start;
+            margin-bottom: 2.5rem;
+        }
+
+        .block:last-child {
+            margin-bottom: 0;
+        }
+
+        .block.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .block .text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* Foto tamaño post Instagram (cuadrada) */
+        .block .photo {
+            flex: 0 0 320px;          /* ancho fijo tipo post */
+            width: 320px;
+        }
+
+        .block .photo figure {
+            margin: 0;
+            width: 100%;
+        }
+
+        .block .photo img {
+            width: 100%;
+            aspect-ratio: 1 / 1;       /* cuadrado perfecto */
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .block .photo img:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px var(--scarlet-glow);
+        }
+
+        .block .photo figcaption {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 0.55rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Texto */
+        p {
+            margin-bottom: 1.1rem;
+            color: var(--text-main);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            color: var(--scarlet);
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 1.1rem 0 0 1.3rem;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        li::marker {
+            color: var(--scarlet);
+        }
+
+        .quote {
+            border-left: 3px solid var(--scarlet);
+            padding: 0.7rem 0 0.7rem 1.3rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 1.18rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+        }
+
+        footer span {
+            color: var(--scarlet);
+        }
+
+        /* Responsive */
+        @media (max-width: 820px) {
+            header h1 {
+                font-size: 2.1rem;
+                letter-spacing: 0.12em;
+            }
+
+            .block,
+            .block.reverse {
+                flex-direction: column;
+                gap: 1.6rem;
+            }
+
+            .block .photo {
+                flex: none;
+                width: 100%;
+                max-width: 360px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kurapika <span>Kurta</span></h1>
+        <p class="subtitle">Hunter × Hunter · El último de los Kurta</p>
+        <nav>
+            <a href="#origen">Origen</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#personalidad">Personalidad</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1 -->
+        <article id="origen">
+            <h2 class="section-title">Origen y Trasfondo</h2>
+
+            <!-- Texto + foto 1 -->
+            <div class="block">
+                <div class="text">
+                    <p>
+                        Kurapika es el <span class="highlight">último superviviente</span> del clan Kurta, 
+                        un pueblo aislado y pacífico cuya sangre guarda un secreto ancestral: 
+                        los <span class="highlight">ojos escarlata</span>. Estos ojos, de un rojo intenso 
+                        y valiosísimo, se activan solo ante emociones extremas.
+                    </p>
+                    <p>
+                        A los doce años, la <span class="highlight">Brigada Fantasma</span> masacró a todo 
+                        su clan con el único fin de vender sus ojos en el mercado negro. 
+                        Desde ese día, Kurapika carga con el peso de ser el único testigo 
+                        y el único encargado de hacer justicia.
+                    </p>
+                    <ul>
+                        <li>Clan Kurta — guardianes de los ojos escarlata</li>
+                        <li>Único superviviente del genocidio</li>
+                        <li>Se convierte en Hunter para rastrear a la Brigada</li>
+                    </ul>
+                </div>
+                <div class="photo">
+                    <figure>
+                        <img src="images/pika1.jpg.jpg" alt="PRUEBA" width="300">
+                        <figcaption>Recuerdo del clan Kurta</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- Texto + foto 2 (invertido) -->
+            <div class="block reverse">
+                <div class="text">
+                    <p>
+                        Tras la masacre, Kurapika abandona su hogar en ruinas y se lanza al mundo 
+                        exterior con un único propósito: recuperar los ojos de su gente y 
+                        hacer pagar a quienes los asesinaron. Su camino lo lleva a presentarse 
+                        al Examen de Hunter, donde conoce a Gon, Killua y Leorio.
+                    </p>
+                </div>
+                <div class="photo">
+                    <figure>
+                        <img src="images/pika2.jpg.jpg" alt="Kurapika con expresión determinada">
+                        <figcaption>La determinación del último Kurta</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECCIÓN 2 -->
+        <article id="habilidades">
+            <h2 class="section-title">Habilidades Nen</h2>
+
+            <div class="block">
+                <div class="text">
+                    <p>
+                        Kurapika es un <span class="highlight">Conjurador</span> de nivel excepcional. 
+                        Su habilidad principal, conocida como <strong>Chain Jail</strong>, 
+                        está diseñada específicamente contra los miembros de la Brigada Fantasma.
+                    </p>
+                    <p>
+                        Posee cinco cadenas, cada una ligada a un dedo y a un propósito preciso:
+                    </p>
+                    <ul>
+                        <li><strong>Índice</strong> — Chain Jail (inmovilización absoluta)</li>
+                        <li><strong>Medio</strong> — Dowsing Chain (localización)</li>
+                        <li><strong>Anular</strong> — Heal Chain (curación)</li>
+                        <li><strong>Meñique</strong> — Steal Chain (robo de habilidades)</li>
+                        <li><strong>Pulgar</strong> — Holy Chain (protección y regeneración)</li>
+                    </ul>
+                    <p>
+                        Cuando sus ojos se tiñen de escarlata, su poder aumenta de forma drástica. 
+                        Sin embargo, el uso prolongado de Chain Jail puede costarle la vida.
+                    </p>
+                </div>
+                <div class="photo">
+                    <figure>
+                        <img src="images/pika3.jpg.jpg" alt="Kurapika invocando sus cadenas Nen">
+                        <figcaption>Las cinco cadenas del juicio</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECCIÓN 3 -->
+        <article id="personalidad">
+            <h2 class="section-title">Personalidad y Motivación</h2>
+
+            <div class="block reverse">
+                <div class="text">
+                    <p>
+                        Kurapika es inteligente, analítico y de una disciplina casi monástica. 
+                        Mantiene una apariencia serena y educada, pero bajo esa calma 
+                        arde un odio profundo hacia quienes destruyeron a su pueblo.
+                    </p>
+                    <p>
+                        Es leal a sus compañeros —Gon, Killua y Leorio—, aunque su sed de venganza 
+                        siempre está presente. Su mayor conflicto interno es el delicado 
+                        equilibrio entre la justicia y la sed de sangre.
+                    </p>
+
+                    <div class="quote">
+                        «Voy a recuperar los ojos de mi clan… cueste lo que cueste.»
+                    </div>
+
+                    <ul>
+                        <li>Personalidad: inteligente, estoico, vengativo</li>
+                        <li>Objetivo: destruir a la Brigada Fantasma</li>
+                        <li>Rol: Blacklist Hunter / guardaespaldas de la familia Nostrade</li>
+                    </ul>
+                </div>
+                <div class="photo">
+                    <figure>
+                        <img src="images/pika4.jpg.jpg" alt="Kurapika con ojos escarlata">
+                        <figcaption>Los ojos escarlata</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        Kurapika Kurta · <span>Hunter × Hunter</span><br>
+    </footer>
+</body>
+</html>
